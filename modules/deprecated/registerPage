@@ -1,0 +1,3 @@
+let registePage (obj, path, url) {
+    obj.concat()
+}

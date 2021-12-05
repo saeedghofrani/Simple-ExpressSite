@@ -1,0 +1,22 @@
+{
+  "name": "saeed_ghofrani_hw11_maktab62",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saeedghofrani/Saeed_Ghofrani_hw11_maktab62.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saeedghofrani/Saeed_Ghofrani_hw11_maktab62/issues"
+  },
+  "homepage": "https://github.com/saeedghofrani/Saeed_Ghofrani_hw11_maktab62#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

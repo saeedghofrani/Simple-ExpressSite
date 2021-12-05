@@ -1,0 +1,47 @@
+let pageData = require('../readPage.js');
+try {
+    const rootPage = pageData('../page/root/index.html');
+    const rootPageCss = pageData('../page/root/css/style.css')
+    const json = pageData('../page/JSON/file.json');
+    const notFound = pageData('../page/Not Found/404page.html');
+    const notFoundCss = pageData('../page/Not Found/css/404style.css');
+    const helloWebApplication = pageData('../page/Hello Web Application/page.html');
+    const helloWebApplicationCss = pageData('../page/Hello Web Application/css/style.css');
+    const saeed = pageData('../page/Saeed/page.html');
+    const saeedCss = pageData('../page/Saeed/css/style.css');
+    const aboutMe = pageData('../page/About Me/page.html');
+    const aboutMeCss = pageData('../page/About Me/css/style.css');
+    const content = pageData('../page/Content/page.html');
+    const contentCss = pageData('../page/Content/css/style.css');
+    const helloWorld = pageData('../page/Hello World/page.html');
+    const helloWorldCss = pageData('../page/Hello World/css/style.css');
+    const userTable = pageData('../page/user Table/index.html');
+    const userTableCss = pageData('../page/user Table/css/userTableStyle.css');
+    const userTableCallData = pageData('../page/user Table/js/callData.js');
+    const userTableCRUD = pageData('../page/user Table/js/CRUD.js');
+    const userTableGUI = pageData('../page/user Table/js/GUI.js');
+    module.exports = {
+        rootPage,
+        rootPageCss,
+        json,
+        notFound,
+        notFoundCss,
+        helloWebApplication,
+        helloWebApplicationCss,
+        saeed,
+        saeedCss,
+        aboutMe,
+        aboutMeCss,
+        content,
+        contentCss,
+        helloWorld,
+        helloWorldCss,
+        userTable,
+        userTableCss,
+        userTableCallData,
+        userTableCRUD,
+        userTableGUI
+    };
+} catch (error) {
+    console.log(`an error occurred while reading ERROR: ${error}`);
+}
