@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const pageHeader = require('../../modules/pageHeader.js');
+const pageHeader = require('./modules/pageHeader.js');
 const path = require('path');
-const router = require('../../routes/extera/route.js');
+const router = require('./routes/extera/route.js');
 
 //public//
-app.use(express.static(path.join(__dirname, '../../public')));
+app.use(express.static(path.join(__dirname, './public')));
 //router//
 app.use('/ester', router);
 
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     res.status(404);
     // respond with html page
     if (req.accepts('html')) {
-        return res.sendFile(path.join(__dirname, '../../pages/notFound/404page.html'),
+        return res.sendFile(path.join(__dirname, './pages/notFound/404page.html'),
             (err) => {
                 err ? next(err) : console.log('Sent:', '404page');
             });

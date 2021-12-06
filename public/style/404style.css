@@ -42,3 +42,8 @@ button:hover {
   transition-property: all;
   transition-timing-function: line;
 }
+h6 {
+  font-size:20px;
+  letter-spacing:normal;
+  padding: 30px;
+}

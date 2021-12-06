@@ -165,8 +165,34 @@ input[type="checkbox"] {
   height: 100vh;
   /*This part is important for centering*/
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Pacifico", cursive;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgb(56, 33, 32) 56%,
+    rgb(75, 55, 41) 100%
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+
+  animation: move 1s infinite;
+}
+
+@keyframes move {
+  50% {
+    background-image: linear-gradient(
+      262deg,
+      rgb(33, 37, 63) 0%,
+      rgb(75, 13, 12) 56%,
+      rgb(67, 34, 11) 100%
+    );
+  }
 }
 
 .typing-demo {
@@ -174,11 +200,28 @@ input[type="checkbox"] {
   animation: typing 2s steps(17), 0.1s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid;
+  border-right: 2px solid;
   font-family: cursive;
   font-size: 4em;
 }
-
+.typing-demo2 {
+  width: 22ch;
+  animation: typing 2s steps(20), 0.1s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0px solid;
+  font-family: cursive;
+  font-size: 4em;
+}
+.typing-demo3 {
+  width: 24ch;
+  animation: typing 2s steps(23), 0.1s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0px solid;
+  font-family: cursive;
+  font-size: 4em;
+}
 @keyframes typing {
   from {
     width: 0;
