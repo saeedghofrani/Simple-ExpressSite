@@ -27,12 +27,13 @@
         </ul>
     </div>
 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMZoP2s2HMUGZHiS1Tz0YGt7SjwhiQ8qaUA&usqp=CAU" alt="contact">
-    <form>
-        <input name="name" type="text" class="feedback-input" placeholder="Name" />
-        <input name="email" type="text" class="feedback-input" placeholder="Email" />
-        <input name="movie" type="text" class="feedback-input" placeholder="Your favorit movie" />
-        <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMZoP2s2HMUGZHiS1Tz0YGt7SjwhiQ8qaUA&usqp=CAU"
+        alt="contact">
+    <form action='/ester/thanks' method='post'>
+        <input name="name" type="text" class="feedback-input" placeholder="Name " required />
+        <input name="email" type="text" class="feedback-input" placeholder="Email" required />
+        <input name="movie" type="text" class="feedback-input" placeholder="Your favorit movie" required />
+        <textarea name="text" class="feedback-input" placeholder="Comment" required></textarea>
         <input type="submit" value="SUBMIT" />
     </form>
 

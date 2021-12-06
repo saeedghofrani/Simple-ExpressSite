@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-let page = require('../../modules/moviePage.js')
+let page = require('../../modules/moviePage.js');
 
 
 router.use((req, res, next) => {
@@ -19,6 +19,9 @@ router.get('/contact', (req, res) => {
 });
 router.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, '../../pages/shop/home.html'));
+});
+router.post('/thanks', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../pages/shop/thanks.html'));
 });
 router.get('/:movie', (req, res) => {
     let url = req.params['movie'];
