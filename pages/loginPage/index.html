@@ -12,15 +12,18 @@
 </head>
 
 <body>
-    <form action="/userentry" method="post">
-        <!-- user input-->
-        Username:<br>
-        <input type="text" name="username" placeholder="Username" required><br><br>
-        Password:<br>
-        <input type="password" name="password" placeholder="Password" required><br><br>
-        <!-- submit button -->
-        <input type="submit" value="login">
-    </form>
+    <div class='login-page'>
+        <div class="form">
+            <form class="login-form" action="/userentry" method="post">
+                <!-- user input-->
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <!-- submit button -->
+                <input type="submit" value="login">
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>

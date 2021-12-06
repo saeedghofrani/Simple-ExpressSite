@@ -22,10 +22,10 @@ router.use(bodyParser.json());
 
 router.post('/userentry', function (req, res) {
     if (!validate(req, data)) {
-        res.send('there is no user matching discription');
+        res.sendFile(path.join(__dirname, '../../pages/validationResponse/wrongUserPass.html'));
         return;
     }
-    res.send('seccesfull');
+    res.sendFile(path.join(__dirname, '../../pages/validationResponse/userExist.html'));
 });
 
 module.exports = router;
