@@ -1,25 +1,50 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-
-let page = {
-    'part1': path.join(__dirname, '../../pages/speech/index1.html'),
-    'part2': path.join(__dirname, '../../pages/speech/index2.html'),
-    'part3': path.join(__dirname, '../../pages/speech/index3.html'),
-    'part4': path.join(__dirname, '../../pages/speech/index4.html'),
-    'part5': path.join(__dirname, '../../pages/speech/index5.html'),
-};
+const page = require('../../modules/indexExpressPages.js')
 
 router.use((req, res, next) => {
     console.log(`request was made: ${req.url}`);
     next();
 });
-router.get('/:part', (req, res) => {
+router.get('/:part', (req, res, next) => {
     let url = req.params['part'];
     if (page.hasOwnProperty(url))
         res.sendFile(page[url]);
-    else
-        res.send(`404 \n couldnt find  ${req.url}`);
+    else {
+        console.log('up');
+        res.status(404);
+        // respond with html page
+        if (req.accepts('html')) {
+            return res.sendFile(path.join(__dirname, '../../pages/notFound/404page.html'),
+                (err) => {
+                    err ? next(err) : console.log('Sent:', '404page');
+                });
+        }
+        // respond with json
+        if (req.accepts('json'))
+            return res.send({ error: 'Not found' });
+        // default to plain-text. send()
+        res.type('txt').send('Not found');
+
+    }
 });
+//not found//
+router.use((req, res) => {
+    console.log('down');
+    res.status(404);
+    // respond with html page
+    if (req.accepts('html')) {
+        return res.sendFile(path.join(__dirname, '../../pages/notFound/404page.html'),
+            (err) => {
+                err ? next(err) : console.log('Sent:', '404page');
+            });
+    }
+    // respond with json
+    if (req.accepts('json'))
+        return res.send({ error: 'Not found' });
+    // default to plain-text. send()
+    res.type('txt').send('Not found');
+})
 
 module.exports = router;

@@ -7,8 +7,10 @@ router.use((req, res, next) => {
     next();
 });
 router.get('/hello', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../pages/HelloWorld/page.html'));
+    return res.sendFile(path.join(__dirname, '../../pages/HelloWorld/page.html'),
+    (err) => {
+        err ? next(err) : console.log('Sent:', '404page');
+    });
 });
-
 
 module.exports = router;

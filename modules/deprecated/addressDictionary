@@ -1,0 +1,18 @@
+"use strict";
+
+const path = require("path");
+
+try {
+    // dictionary contain addresses//
+    const notFound = { 
+        'notFound': path.join(__dirname, '../pages/notFond/404page.html') 
+    };
+    const hello = { 
+        '/hello' : path.join(__dirname, '../../pages/HelloWorld/page.html')
+    };
+
+    module.exports = notFound, hello;
+
+} catch (error) {
+    console.log(`an error occurred while reading ERROR: ${error}`);
+}
