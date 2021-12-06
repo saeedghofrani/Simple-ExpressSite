@@ -1,3 +1,7 @@
+"use strict";
+
+
+
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -8,19 +12,39 @@ router.use((req, res, next) => {
     next();
 });
 router.get('/part1', (req, res) => {
-    return res.sendFile(page['part1']);
+    return res.sendFile(page['part1'], (err) => {
+        if (err) {
+            errorHandler(res, req, next);
+        }
+    });
 });
 router.get('/part2', (req, res) => {
-    return res.sendFile(page['part2']);
+    return res.sendFile(page['part2'], (err) => {
+        if (err) {
+            errorHandler(res, req, next);
+        }
+    });
 });
 router.get('/part3', (req, res) => {
-    return res.sendFile(page['part3']);
+    return res.sendFile(page['part3'], (err) => {
+        if (err) {
+            errorHandler(res, req, next);
+        }
+    });
 });
 router.get('/part4', (req, res) => {
-    return res.sendFile(page['part4']);
+    return res.sendFile(page['part4'], (err) => {
+        if (err) {
+            errorHandler(res, req, next);
+        }
+    });
 });
 router.get('/part5', (req, res) => {
-    return res.sendFile(page['part5']);
+    return res.sendFile(page['part5'], (err) => {
+        if (err) {
+            errorHandler(res, req, next);
+        }
+    });
 });
 
 
