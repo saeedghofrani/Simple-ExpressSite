@@ -11,13 +11,5 @@ let engine = (fileName, content, direction) => {
     console.log('Done');
   });
 };
-
+engine('saeed.json', `[{"saeed":"mm"},{"name":"saeed"}]`, '../modules');
 module.exports = engine;
-
-// try {
-//   if (!fs.existsSync('/Users/joe/test')) {
-//     fs.mkdirSync('/Users/joe/test');
-//   }
-// } catch (err) {
-//   console.error(err);
-// }
