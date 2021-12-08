@@ -1,9 +1,6 @@
 const express = require('express');
-const app = express();
 const path = require('path');
 const router = express.Router();
-const fs = require('fs');
-const bodyParser = require('body-parser');
 const jsonreader = require('../../../modules/readJson.js');
 
 //json file//
