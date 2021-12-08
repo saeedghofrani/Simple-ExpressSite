@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 const page = require('../../modules/indexExpressPages.js')
 const errorHandler = require('../../modules/sendFileErrorHandler.js');
 

@@ -1,6 +1,5 @@
 "use strict";
 
-
 const express = require('express');
 const router = express.Router();
 const path = require('path');
@@ -9,6 +8,9 @@ const json = jsonReader(path.join(__dirname, '../../pages/validationJSON/userPas
 const data = JSON.parse(json);
 const validate = require('../../modules/userValidation.js');
 const errorHandler = require('../../modules/sendFileErrorHandler.js');
+
+router.use(express.urlencoded({ extended: false }));
+router.use(express.json());
 
 router.use((req, res, next) => {
     console.log(`request was made: ${req.url}`);
@@ -21,11 +23,6 @@ router.get('/login', (req, res) => {
         }
     });
 });
-// parse application/x-www-form-urlencoded
-router.use(express.urlencoded({ extended: false }));
-// parse application/json
-router.use(express.json());
-
 router.post('/userentry', function (req, res) {
     if (!validate(req, data)) {
         res.sendFile(path.join(__dirname, '../../pages/validationResponse/wrongUserPass.html'), (err) => {

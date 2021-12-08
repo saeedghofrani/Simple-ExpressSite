@@ -1,10 +1,7 @@
 "use strict";
 
-
-
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 const page = require('../../modules/indexExpressPages.js')
 
 router.use((req, res, next) => {
@@ -46,6 +43,5 @@ router.get('/part5', (req, res) => {
         }
     });
 });
-
 
 module.exports = router;
