@@ -4,10 +4,11 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const jsonReader = require('../../modules/readJson.js');
-const json = jsonReader(path.join(__dirname, '../../pages/validationJSON/userPass.json'), 'utf8');
-const data = JSON.parse(json);
 const validate = require('../../modules/userValidation.js');
 const errorHandler = require('../../modules/sendFileErrorHandler.js');
+
+const json = jsonReader(path.join(__dirname, '../../pages/validationJSON/userPass.json'), 'utf8');
+const data = JSON.parse(json);
 
 router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
@@ -32,6 +33,8 @@ router.post('/userentry', function (req, res) {
         });
         return;
     }
+    // let user = data.find(obj => obj.username === req.body.username);
+    // res.send(user);
     res.sendFile(path.join(__dirname, '../../pages/validationResponse/userExist.html'), (err) => {
         if (err) {
             errorHandler(res, req, next);

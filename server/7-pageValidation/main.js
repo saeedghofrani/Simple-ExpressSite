@@ -8,7 +8,6 @@ const router = require('../../routes/pageValidatin/route.js');
 app.use(express.static(path.join(__dirname, '../../public')));
 //router//
 app.use('/', router);
-
 //notFound//
 app.use((req, res, next) => {
     res.status(404);

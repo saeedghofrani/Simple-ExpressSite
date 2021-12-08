@@ -6,6 +6,7 @@ const path = require('path');
 let page = require('../../modules/moviePage.js');
 const errorHandler = require('../../modules/sendFileErrorHandler.js')
 
+
 router.use((req, res, next) => {
     console.log(`request was made: ${req.url}`);
     next();
