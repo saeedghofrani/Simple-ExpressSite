@@ -9,16 +9,15 @@ const jsonreader = require('../../../modules/readJson.js');
 //json file//
 const json = jsonreader(path.join(__dirname, '../../../pages/userJSON/users.json'), 'utf8');
 
-
 router.use((req, res, next) => {
     console.log(`request was made: ${req.url}`);
     next();
 });
 
-// parse application/x-www-form-urlencoded
-router.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-router.use(bodyParser.json());
+router.use(express.json());
+router.use(express.urlencoded({ extended: false }));
+router.use(express.raw());
+router.use(express.text());
 
 router.use('/getUser', function (req, res) {
     const data = JSON.parse(json);
