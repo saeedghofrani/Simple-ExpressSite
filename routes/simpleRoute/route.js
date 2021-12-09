@@ -9,7 +9,7 @@ router.use((req, res, next) => {
     next();
 });
 router.get('/hello', (req, res, next) => {
-    return res.sendFile(path.join(__dirname, '../../pages/Helloorld/page.html'),
+    return res.sendFile(path.join(__dirname, '../../pages/Helloworld/page.html'),
     (err) => {
         err ? next(err) : console.log('Sent:', 'page');
     });

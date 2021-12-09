@@ -13,8 +13,6 @@ router.use((req, res, next) => {
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
-router.use(express.raw());
-router.use(express.text());
 
 router.use('/getUser', function (req, res) {
     const data = JSON.parse(json);

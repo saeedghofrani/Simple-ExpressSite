@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const page = require('../../modules/indexExpressPages.js')
+const page = require('../../modules/indexExpressPages.js');
 const errorHandler = require('../../modules/sendFileErrorHandler.js');
 
 router.use((req, res, next) => {
