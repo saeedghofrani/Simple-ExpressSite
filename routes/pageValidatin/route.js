@@ -34,12 +34,13 @@ router.post('/userentry', function (req, res) {
         return;
     }
     // let user = data.find(obj => obj.username === req.body.username);
-    // res.send(user);
-    res.sendFile(path.join(__dirname, '../../pages/validationResponse/userExist.html'), (err) => {
-        if (err) {
-            errorHandler(res, req, next);
-        }
-    });
+    // res.send(`<h1>SECCESFULL</h1>
+    // ${JSON.stringify(user)}`);
+    // res.sendFile(path.join(__dirname, '../../pages/validationResponse/userExist.html'), (err) => {
+    //     if (err) {
+    //         errorHandler(res, req, next);
+    //     }
+    // });
 });
 
 module.exports = router;
