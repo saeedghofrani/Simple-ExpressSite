@@ -36,11 +36,11 @@ router.post('/userentry', function (req, res) {
     // let user = data.find(obj => obj.username === req.body.username);
     // res.send(`<h1>SECCESFULL</h1>
     // ${JSON.stringify(user)}`);
-    // res.sendFile(path.join(__dirname, '../../pages/validationResponse/userExist.html'), (err) => {
-    //     if (err) {
-    //         errorHandler(res, req, next);
-    //     }
-    // });
+    res.sendFile(path.join(__dirname, '../../pages/validationResponse/userExist.html'), (err) => {
+        if (err) {
+            errorHandler(res, req, next);
+        }
+    });
 });
 
 module.exports = router;
