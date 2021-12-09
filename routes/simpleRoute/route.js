@@ -8,10 +8,10 @@ router.use((req, res, next) => {
     console.log(`request was made: ${req.url}`);
     next();
 });
-router.get('/hello', (req, res) => {
-    return res.sendFile(path.join(__dirname, '../../pages/HelloWorld/page.html'),
+router.get('/hello', (req, res, next) => {
+    return res.sendFile(path.join(__dirname, '../../pages/Helloorld/page.html'),
     (err) => {
-        err ? next(err) : console.log('Sent:', '404page');
+        err ? next(err) : console.log('Sent:', 'page');
     });
 });
 
